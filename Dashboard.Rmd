@@ -1,0 +1,64 @@
+---
+title: "Dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(plotly)
+library(p8105.datasets)
+data("ny_noaa")
+```
+
+```{r, include = FALSE}
+tidy_noaa <- ny_noaa %>%
+  separate(date, into = c("year","month","day"), sep = "-") %>%
+  mutate(prcp = as.numeric(prcp), 
+         snow = as.numeric(snow), 
+         snwd = as.numeric(snwd), 
+         tmax = as.numeric(tmax), 
+         tmin = as.numeric(tmin),
+         month = month.name[as.integer(month)],
+         year = as.integer(year)) %>%
+  drop_na() %>% filter(year == 2000, month == "December")
+```
+
+
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+tidy_noaa %>%
+  mutate(text_label = str_c("Month: ", month, "\nDay: ", day)) %>% 
+  plot_ly(
+    x = ~tmax, y = ~tmin, type = "scatter", mode = "markers",
+    color = ~snwd, text = ~text_label, alpha = 0.5)
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+tidy_noaa %>% 
+  plot_ly(y = ~tmin, color = ~day, type = "box", colors = "viridis")
+```
+
+### Chart C
+
+```{r}
+tidy_noaa %>% 
+  group_by(day) %>%
+  summarise(mean_tmin = mean(tmin),
+            mean_tmax = mean(tmax)) %>%
+  plot_ly(x = ~day, y = ~mean_tmin, name = "mean minimum temperature in 2000 December", type = 'scatter', mode = 'lines', line = list(color = "rgb(205, 12, 24)")) %>% add_trace(y = ~mean_tmax, name = "mean maximum temperature in 2000 December", line = list(color = "rgb(22, 96, 167)"))
+```
+

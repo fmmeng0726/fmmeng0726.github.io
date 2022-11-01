@@ -9,6 +9,8 @@ navbar:
       href: http://github.com/fmmeng0726/
     - icon: fa-regular fa-address-card
       href: https://www.linkedin.com/in/meng-fang-074231199/
+    - text: "Dashboard"
+      href: Dashboard.html
       
 output:
   html_document:
