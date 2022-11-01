@@ -39,7 +39,10 @@ tidy_noaa %>%
   mutate(text_label = str_c("Month: ", month, "\nDay: ", day)) %>% 
   plot_ly(
     x = ~tmax, y = ~tmin, type = "scatter", mode = "markers",
-    color = ~snwd, text = ~text_label, alpha = 0.5)
+    color = ~snwd, text = ~text_label, alpha = 0.5) %>%
+  layout(title = "tmax(maximum temperature) vs tmin(minimum temperature ) in 2000 December",
+         xaxis = list(title = "Maximum temperature (tenths of degrees C)"),
+         yaxis = list(title = "Minimum temperature (tenths of degrees C)"))
 ```
 
 Column {data-width=350}
@@ -49,7 +52,10 @@ Column {data-width=350}
 
 ```{r}
 tidy_noaa %>% 
-  plot_ly(y = ~tmin, color = ~day, type = "box", colors = "viridis")
+  plot_ly(y = ~tmin, color = ~day, type = "box", colors = "viridis") %>%
+  layout(title = "Distribution of Minumum Temperature for each day in 2000 December",
+         xaxis = list(title = "Day in December"),
+         yaxis = list(title = "Minimum temperature (tenths of degrees C)"))
 ```
 
 ### Chart C
@@ -59,6 +65,9 @@ tidy_noaa %>%
   group_by(day) %>%
   summarise(mean_tmin = mean(tmin),
             mean_tmax = mean(tmax)) %>%
-  plot_ly(x = ~day, y = ~mean_tmin, name = "mean minimum temperature in 2000 December", type = 'scatter', mode = 'lines', line = list(color = "rgb(205, 12, 24)")) %>% add_trace(y = ~mean_tmax, name = "mean maximum temperature in 2000 December", line = list(color = "rgb(22, 96, 167)"))
+  plot_ly(x = ~day, y = ~mean_tmin, name = "mean minimum temperature in 2000 December", type = 'scatter', mode = 'lines', line = list(color = "rgb(205, 12, 24)")) %>% add_trace(y = ~mean_tmax, name = "mean maximum temperature in 2000 December", line = list(color = "rgb(22, 96, 167)")) %>%
+  layout(title = "tmax(maximum temperature) and tmin(minimum temperature ) for each day in 2000 December",
+         xaxis = list(title = "Day in December"),
+         yaxis = list(title = "Temperature (tenths of degrees C)"))
 ```
 
