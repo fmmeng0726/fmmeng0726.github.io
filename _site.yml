@@ -1,0 +1,15 @@
+name: "Website yml"
+output_dir: "."
+navbar:
+  title: "Home"
+  right:
+    - icon: fa-envelope fa-lg
+      href: mailto:mf3532@cumc.columbia.edu
+    - icon: fa-github fa-lg
+      href: http://github.com/fmmeng0726/
+    - icon: fa-regular fa-address-card
+      href: https://www.linkedin.com/in/meng-fang-074231199/
+      
+output:
+  html_document:
+    theme: sandstone

@@ -1,0 +1,20 @@
+---
+title: "Meng Fang's website"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+## Introduction
+
+This is Meng Fang's personal website. I am currently a master student major in Biostatistics at Columbia Mailman School of Public Health. 
+Here is a direct link to my [resume](experience.html).
+
+## My Fluffy Friends
+
+Here is a picture of my cat Panghu
+![](image/panghu.jpg)
+
+and another picture of my dog Lemon
+![](image/lemon.jpg)
