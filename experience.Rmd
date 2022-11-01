@@ -8,7 +8,7 @@ output:
 
 ## EDUCATION BACKGROUND
 
-**<font size="4"> Columbia University** (Sep 2022 - Present)
+**<font size="4"> Columbia University** (Sept 2022 - Present)
 
 Master of Science in Biostatistics, Mailman School of Public Health
 
@@ -31,7 +31,7 @@ Biology Bachelor, College of Literature, Arts and Sciences
 
 ## RESEARCH EXPERIENCES
 
-**<font size="4"> Yale University, Public Health and Biostatistics Research</font>** (July - Sep 2021)
+**<font size="4"> Yale University, Public Health and Biostatistics Research</font>** (July - Sept 2021)
 
 *Trainee and Project Member*
 
@@ -67,7 +67,7 @@ Biology Bachelor, College of Literature, Arts and Sciences
 
 ## CAMPUS ACTIVITIES 
 
-**<font size="4"> University of Michigan, Mathematics Department </font>** (Sep 2021- Dec 2021)
+**<font size="4"> University of Michigan, Mathematics Department </font>** (Sept 2021- Dec 2021)
 
 *Teaching Assistant*
 
